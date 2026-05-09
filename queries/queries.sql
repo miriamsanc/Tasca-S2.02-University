@@ -1,5 +1,5 @@
 -- 1. Retorna un llistat amb el primer cognom, segon cognom i el nom de tots els/les alumnes. El llistat haurà d'estar ordenat alfabèticament de menor a major pel primer cognom, segon cognom i nom.
-SELECT nombre, apellido1, apellido2 from persona WHERE tipo = 'alumno' ORDER BY apellido1 ASC, apellido2 ASC, nombre ASC;
+SELECT apellido1, apellido2, nombre from persona WHERE tipo = 'alumno' ORDER BY apellido1 ASC, apellido2 ASC, nombre ASC;
 
 -- 2. Esbrina el nom i els dos cognoms dels alumnes que no han donat d'alta el seu número de telèfon en la base de dades. (nombre, apellido1, apellido2)
 SELECT nombre, apellido1, apellido2 FROM persona WHERE tipo = 'alumno' AND telefono IS NULL;
@@ -15,7 +15,7 @@ SELECT nombre, apellido1, apellido2, nif FROM persona WHERE telefono IS NULL AND
 SELECT id, nombre, cuatrimestre, curso, id_grado FROM asignatura WHERE cuatrimestre = '1' AND curso = '3' AND id_grado = '7';
 
 -- 6. Retorna un llistat dels professors/es juntament amb el nom del departament al qual estan vinculats. El llistat ha de retornar quatre columnes, primer cognom, segon cognom, nom i nom del departament. El resultat estarà ordenat alfabèticament de menor a major pels cognoms i el nom. (apellido1, apellido2, nombre, departamento)
-SELECT persona.nombre, apellido1, apellido2, departamento.nombre AS departamento FROM persona 
+SELECT apellido1, apellido2, persona.nombre, departamento.nombre AS departamento FROM persona 
 JOIN profesor ON persona.id = profesor.id_profesor JOIN departamento ON departamento.id = profesor.id_profesor
 ORDER BY apellido1 ASC, apellido2 ASC, persona.nombre ASC;
 
@@ -27,10 +27,17 @@ JOIN persona ON persona.id = alumno_se_matricula_asignatura.id_alumno
 WHERE persona.nif = '26902806M';
 
 -- 8. Retorna un llistat amb el nom de tots els departaments que tenen professors/es que imparteixen alguna assignatura en el Grau en Enginyeria Informàtica (Pla 2015). (nombre)
-
+SELECT DISTINCT departamento.nombre AS nombre FROM departamento 
+JOIN profesor ON profesor.id_departamento = departamento.id
+JOIN asignatura ON asignatura.id_profesor = profesor.id_profesor
+JOIN grado ON asignatura.id_grado = grado.id
+WHERE grado.nombre = 'Grado en Ingeniería Informática (Plan 2015)';
 
 -- 9. Retorna un llistat amb tots els alumnes que s'han matriculat en alguna assignatura durant el curs escolar 2018/2019. (nombre, apellido1, apellido2)
-
+SELECT DISTINCT persona.nombre, persona.apellido1, persona.apellido2 FROM persona
+JOIN alumno_se_matricula_asignatura asma ON asma.id_alumno = persona.id
+JOIN curso_escolar ce ON asma.id_curso_escolar = ce.id
+WHERE persona.tipo = 'alumno' AND ce.anyo_inicio = 2018 AND ce.anyo_fin = 2019;
 
 -- Resol les 6 següents consultes utilitzant les clàusules LEFT JOIN i RIGHT JOIN.
 -- 10. Retorna un llistat amb els noms de tots els professors/es i els departaments que tenen vinculats. El llistat també ha de mostrar aquells professors/es que no tenen cap departament associat. El llistat ha de retornar quatre columnes, nom del departament, primer cognom, segon cognom i nom del professor/a. El resultat estarà ordenat alfabèticament de menor a major pel nom del departament, cognoms i el nom. (departamento, apellido1, apellido2, nombre)
