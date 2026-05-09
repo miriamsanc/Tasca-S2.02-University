@@ -15,7 +15,7 @@ SELECT nombre, apellido1, apellido2, nif FROM persona WHERE telefono IS NULL AND
 SELECT id, nombre, cuatrimestre, curso, id_grado FROM asignatura WHERE cuatrimestre = '1' AND curso = '3' AND id_grado = '7';
 
 -- 6. Retorna un llistat dels professors/es juntament amb el nom del departament al qual estan vinculats. El llistat ha de retornar quatre columnes, primer cognom, segon cognom, nom i nom del departament. El resultat estarà ordenat alfabèticament de menor a major pels cognoms i el nom. (apellido1, apellido2, nombre, departamento)
-SELECT apellido1, apellido2, persona.nombre, departamento.nombre AS departamento FROM persona 
+SELECT apellido1, apellido2, persona.nombre, departamento.nombre AS departamento FROM persona WHERE tipo = 'profesor'
 JOIN profesor ON persona.id = profesor.id_profesor JOIN departamento ON departamento.id = profesor.id_profesor
 ORDER BY apellido1 ASC, apellido2 ASC, persona.nombre ASC;
 
