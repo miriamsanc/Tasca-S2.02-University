@@ -2,63 +2,32 @@
 
 
 ## 📈 Resumen
-✅ 5 correctas de 8 queries
+✅ 8 correctas de 10 queries
 
-## ❌ Query 1: Incorrecto
-```diff
---- 
-+++ 
-@@ -1,13 +1,13 @@
--apellido1 | apellido2 | nombre
--Domínguez | Guerrero | Antonio
--Gea | Ruiz | Sonia
--Gutiérrez | López | Juan
--Heller | Pagac | Pedro
--Herman | Pacocha | Daniel
--Hernández | Martínez | Irene
--Herzog | Tremblay | Ramón
--Koss | Bayer | José
--Lakin | Yundt | Inma
--Saez | Vega | Juan
--Sánchez | Pérez | Salvador
--Strosin | Turcotte | Ismael
-+nombre | apellido1 | apellido2
-+Antonio | Domínguez | Guerrero
-+Sonia | Gea | Ruiz
-+Juan | Gutiérrez | López
-+Pedro | Heller | Pagac
-+Daniel | Herman | Pacocha
-+Irene | Hernández | Martínez
-+Ramón | Herzog | Tremblay
-+José | Koss | Bayer
-+Inma | Lakin | Yundt
-+Juan | Saez | Vega
-+Salvador | Sánchez | Pérez
-+Ismael | Strosin | Turcotte
-```
+## ✅ Query 1: Correcto
 
-⏱ Tiempo: 0.44 ms
+⏱ Tiempo: 0.41 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 2: Correcto
 
-⏱ Tiempo: 0.29 ms
+⏱ Tiempo: 0.34 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 3: Correcto
 
-⏱ Tiempo: 0.31 ms
+⏱ Tiempo: 0.34 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 4: Correcto
 
-⏱ Tiempo: 0.29 ms
+⏱ Tiempo: 0.31 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -75,7 +44,7 @@
 --- 
 +++ 
 @@ -1,13 +1,4 @@
--apellido1 | apellido2 | nombre | departamento
+ apellido1 | apellido2 | nombre | departamento
 -Fahey | Considine | Antonio | Economía y Empresa
 -Hamill | Kozey | Manolo | Informática
 -Kohler | Schoen | Alejandro | Matemáticas
@@ -88,24 +57,37 @@
 -Spencer | Lakin | Esther | Educación
 -Stiedemann | Morissette | Alfredo | Química y Física
 -Streich | Hirthe | Carmen | Educación
-+nombre | apellido1 | apellido2 | departamento
-+Cristina | Lemke | Rutherford | Derecho
-+Zoe | Ramirez | Gea | Economía y Empresa
-+David | Schmidt | Fisher | Agronomía
++Lemke | Rutherford | Cristina | Derecho
++Ramirez | Gea | Zoe | Economía y Empresa
++Schmidt | Fisher | David | Agronomía
 ```
 
-⏱ Tiempo: 0.42 ms
+⏱ Tiempo: 0.37 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
 
 ## ✅ Query 7: Correcto
 
-⏱ Tiempo: 0.53 ms
-✅ Se usó índice(s) en la consulta: PRIMARY,id_asignatura,id_curso_escolar, PRIMARY, PRIMARY,nif
+⏱ Tiempo: 0.50 ms
+✅ Se usó índice(s) en la consulta: PRIMARY,id_asignatura,id_curso_escolar, PRIMARY,nif, PRIMARY
 
 ---
 
-## ❌ Query 8: Error
+## ✅ Query 8: Correcto
+
+⏱ Tiempo: 0.38 ms
+✅ Se usó índice(s) en la consulta: id_profesor,id_grado, PRIMARY,id_departamento, PRIMARY
+
+---
+
+## ✅ Query 9: Correcto
+
+⏱ Tiempo: 0.36 ms
+✅ Se usó índice(s) en la consulta: PRIMARY,id_curso_escolar, PRIMARY
+
+---
+
+## ❌ Query 10: Error
 - **Descripción**: 'NoneType' object is not iterable
 
