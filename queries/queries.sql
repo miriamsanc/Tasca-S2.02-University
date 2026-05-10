@@ -18,7 +18,7 @@ SELECT id, nombre, cuatrimestre, curso, id_grado FROM asignatura WHERE cuatrimes
 SELECT apellido1, apellido2, persona.nombre, departamento.nombre AS departamento FROM persona 
 JOIN profesor ON persona.id = profesor.id_profesor JOIN departamento ON departamento.id = profesor.id_profesor
 WHERE tipo = 'profesor'
-ORDER BY apellido1 ASC, apellido2 ASC, persona.nombre ASC;
+ORDER BY apellido1 ASC, apellido2 ASC, persona.nombre ASC, departamento.nombre ASC;
 
 -- 7. Retorna un llistat amb el nom de les assignatures, any d'inici i any de fi del curs escolar de l'alumne/a amb NIF 26902806M. (nombre, anyo_inicio, anyo_fin)
 SELECT asignatura.nombre, curso_escolar.anyo_inicio, curso_escolar.anyo_fin FROM asignatura 
