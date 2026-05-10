@@ -17,7 +17,7 @@ SELECT id, nombre, cuatrimestre, curso, id_grado FROM asignatura WHERE cuatrimes
 -- 6. Retorna un llistat dels professors/es juntament amb el nom del departament al qual estan vinculats. El llistat ha de retornar quatre columnes, primer cognom, segon cognom, nom i nom del departament. El resultat estarà ordenat alfabèticament de menor a major pels cognoms i el nom. (apellido1, apellido2, nombre, departamento)
 SELECT apellido1, apellido2, persona.nombre, departamento.nombre AS departamento FROM persona 
 JOIN profesor ON persona.id = profesor.id_profesor 
-JOIN departamento ON profesor.id_profesor = departamento.id
+JOIN departamento ON profesor.id_departamento = departamento.id
 WHERE tipo = 'profesor'
 ORDER BY apellido1 ASC, apellido2 ASC, persona.nombre ASC;
 
@@ -90,12 +90,12 @@ SELECT COUNT(id) AS total FROM persona WHERE tipo = 'alumno';
 SELECT COUNT(id) AS total FROM persona WHERE tipo = 'alumno' AND fecha_nacimiento LIKE '%1999%';
 
 -- 18. Calcula quants professors/es hi ha en cada departament. El resultat només ha de mostrar dues columnes, una amb el nom del departament i una altra amb el nombre de professors/es que hi ha en aquest departament. El resultat només ha d'incloure els departaments que tenen professors/es associats i haurà d'estar ordenat de major a menor pel nombre de professors/es. (departamento, total)
-SELECT departamento.nombre AS departamento, COUNT(profesor.id_profesor) AS total FROM DEPARTAMENTO
+SELECT departamento.nombre AS departamento, COUNT(profesor.id_profesor) AS total FROM departamento
 JOIN profesor ON departamento.id = profesor.id_departamento
 ORDER BY total DESC;
 
 -- 19. Retorna un llistat amb tots els departaments i el nombre de professors/es que hi ha en cadascun d'ells. Tingui en compte que poden existir departaments que no tenen professors/es associats. Aquests departaments també han d'aparèixer en el llistat. (departamento, total)
-SELECT departamento.nombre AS departamento, COUNT(profesor.id_profesor) AS total FROM DEPARTAMENTO
+SELECT departamento.nombre AS departamento, COUNT(profesor.id_profesor) AS total FROM departamento
 CROSS JOIN profesor ON departamento.id = profesor.id_departamento
 
 -- 20. Retorna un llistat amb el nom de tots els graus existents en la base de dades i el nombre d'assignatures que té cadascun. Tingues en compte que poden existir graus que no tenen assignatures associades. Aquests graus també han d'aparèixer en el llistat. El resultat haurà d'estar ordenat de major a menor pel nombre d'assignatures. (grau, total)
