@@ -6,126 +6,126 @@
 
 ## ✅ Query 1: Correcto
 
-⏱ Tiempo: 0.38 ms
+⏱ Tiempo: 0.33 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 2: Correcto
 
-⏱ Tiempo: 0.30 ms
+⏱ Tiempo: 0.22 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 3: Correcto
 
-⏱ Tiempo: 0.31 ms
+⏱ Tiempo: 0.20 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 4: Correcto
 
-⏱ Tiempo: 0.33 ms
+⏱ Tiempo: 0.23 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 5: Correcto
 
-⏱ Tiempo: 0.33 ms
+⏱ Tiempo: 0.24 ms
 ✅ Se usó índice(s) en la consulta: id_grado
 
 ---
 
 ## ✅ Query 6: Correcto
 
-⏱ Tiempo: 0.37 ms
-✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_departamento
+⏱ Tiempo: 0.38 ms
+✅ Se usó índice(s) en la consulta: PRIMARY,id_departamento, PRIMARY
 
 ---
 
 ## ✅ Query 7: Correcto
 
-⏱ Tiempo: 0.49 ms
+⏱ Tiempo: 0.41 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_asignatura,id_curso_escolar, PRIMARY,nif
 
 ---
 
 ## ✅ Query 8: Correcto
 
-⏱ Tiempo: 0.36 ms
-✅ Se usó índice(s) en la consulta: id_profesor,id_grado, PRIMARY,id_departamento, PRIMARY
+⏱ Tiempo: 0.29 ms
+✅ Se usó índice(s) en la consulta: id_profesor,id_grado, PRIMARY, PRIMARY,id_departamento
 
 ---
 
 ## ✅ Query 9: Correcto
 
-⏱ Tiempo: 0.37 ms
+⏱ Tiempo: 0.25 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_curso_escolar
 
 ---
 
 ## ✅ Query 10: Correcto
 
-⏱ Tiempo: 0.38 ms
+⏱ Tiempo: 0.29 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
 
 ## ✅ Query 11: Correcto
 
-⏱ Tiempo: 0.34 ms
+⏱ Tiempo: 0.23 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
 
 ## ✅ Query 12: Correcto
 
-⏱ Tiempo: 0.30 ms
+⏱ Tiempo: 0.21 ms
 ✅ Se usó índice(s) en la consulta: id_departamento
 
 ---
 
 ## ✅ Query 13: Correcto
 
-⏱ Tiempo: 0.32 ms
+⏱ Tiempo: 0.23 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY, id_profesor
 
 ---
 
 ## ✅ Query 14: Correcto
 
-⏱ Tiempo: 0.34 ms
+⏱ Tiempo: 0.23 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY, id_profesor
 
 ---
 
 ## ✅ Query 15: Correcto
 
-⏱ Tiempo: 0.34 ms
+⏱ Tiempo: 0.25 ms
 ✅ Se usó índice(s) en la consulta: id_asignatura, id_profesor, id_departamento
 
 ---
 
 ## ✅ Query 16: Correcto
 
-⏱ Tiempo: 0.31 ms
+⏱ Tiempo: 0.20 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 17: Correcto
 
-⏱ Tiempo: 0.30 ms
+⏱ Tiempo: 0.20 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 18: Correcto
 
-⏱ Tiempo: 0.33 ms
+⏱ Tiempo: 0.25 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY, id_departamento
 
 ---
@@ -153,7 +153,7 @@ LEFT JOIN ' at line 7
 -Grado en Química (Plan 2009) | 0.00
 ```
 
-⏱ Tiempo: 0.33 ms
+⏱ Tiempo: 0.24 ms
 ✅ Se usó índice(s) en la consulta: id_grado
 
 ---
@@ -169,7 +169,7 @@ LEFT JOIN ' at line 7
 +1.00 | 26902806M | Salvador | Sánchez | Pérez | Almería | C/ Real del barrio alto | 950254837 | 1991-03-28 | H | alumno
 ```
 
-⏱ Tiempo: 0.31 ms
+⏱ Tiempo: 0.22 ms
 🔍 No se usó ningún índice en esta consulta.
 
 🚨 **Problemas detectados:**
